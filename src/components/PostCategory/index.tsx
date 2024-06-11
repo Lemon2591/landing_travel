@@ -1,8 +1,13 @@
 import React, { FC } from "react";
 import { AiFillCalendar, AiOutlineEye, AiOutlineSearch } from "react-icons/ai";
+import { Pagination } from "antd";
 
 const AllPost: FC<any> = (props) => {
   const list_filter = [
+    {
+      id: 1,
+      name: "All",
+    },
     {
       id: 1,
       name: "Ha Giang",
@@ -64,9 +69,7 @@ const AllPost: FC<any> = (props) => {
                   </div>
 
                   <div className="absolute bottom-[20px] left-[20px]">
-                    <div className="post_tag">
-                      {/* <span>Ha Giang</span> */}
-                    </div>
+                    <div className="post_tag"></div>
                     <div className="post_title !my-[10px]">
                       <h6 className="!text-[26px]">Đay hnasqj iqjndan qjdaj</h6>
                     </div>
@@ -80,7 +83,6 @@ const AllPost: FC<any> = (props) => {
                           <i>
                             <AiFillCalendar />
                           </i>
-                          {/* <p>{moment(props?.data?.createdAt).format("LL")}</p> */}
                           <p>232323232</p>
                         </li>
                         <li>
@@ -276,27 +278,12 @@ const AllPost: FC<any> = (props) => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] pl-[8px]">
-              {/* <div className="cursor-pointer">
-                <div className="rounded-[8px] overflow-hidden pb-[5px]">
-                  <img
-                    src="https://quanticalabs.com/Pressroom/Template/images/samples/787x524/image_08.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="css_text_all_post my-[5px]">
-                  <h6 className="text-[16px] leading-[20px] font-semibold">
-                    Lãnh đạo TPHCM giải quyết những vấn đề "nóng" để chăm sóc
-                    thiếu nhi tốt hơn
-                  </h6>
-                </div>
-                <div className="flex items-center ">
-                  <p className="text-[14px] font-semibold text-[#e53935] mr-5">
-                    Travel
-                  </p>
-                  <span className="text-[12px]">10:11 PM, Feb 02</span>
-                </div>
-              </div> */}
+            <div className="w-[20%] pl-[8px]"></div>
+          </div>
+
+          <div className="all_post_pagination my-[50px]">
+            <div className="all_post_pagination_items">
+              <Pagination defaultCurrent={1} total={50} />
             </div>
           </div>
         </div>

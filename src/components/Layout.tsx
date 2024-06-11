@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout: FC<any> = (props) => {
+const Layout: FC<any> = ({ children }) => {
   return (
     <>
       <Head>
@@ -24,7 +24,7 @@ const Layout: FC<any> = (props) => {
       <div>
         <Header />
         {/* end header */}
-        {props?.children}
+        {children}
         {/* footer */}
         <Footer />
       </div>

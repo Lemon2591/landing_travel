@@ -10,23 +10,18 @@ AllPost.getLayout = function getLayout(page: any) {
   );
 };
 
-
-export async function getServerSideProps(context : any) {
-  
-  
-  try {
-      return {
-        props: {
-          data: ""
-        }
-      }
-  } catch (error) {
-      
-      return {
-          notFound: true,
-      };
-  }
-
-}
+// export async function getServerSideProps(context: any) {
+//   try {
+//     return {
+//       props: {
+//         data: "",
+//       },
+//     };
+//   } catch (error) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+// }
 
 export default AllPost;

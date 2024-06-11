@@ -5,7 +5,6 @@ import "../../assets/css/responsive.css";
 import "../../assets/css/post.css";
 import "../../assets/css/tiny.css";
 import "../../assets/css/404.css";
-
 import "aos/dist/aos.css";
 import Layout from "../components/Layout";
 import "lazysizes";

@@ -61,9 +61,11 @@ const Header: FC = () => {
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-link" data-nav-link>
-                    about us
-                  </a>
+                  <Link href={"/post"}>
+                    <a className="navbar-link" data-nav-link>
+                      All Post
+                    </a>
+                  </Link>
                 </li>
 
                 <li>

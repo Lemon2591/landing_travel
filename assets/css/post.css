@@ -242,3 +242,20 @@
 .btn_search:hover {
     transform: translateX(-10px)
 }
+
+.all_post_pagination_items {
+    display: flex;
+    justify-content: center;
+}
+
+.all_post_pagination_items .ant-pagination-item-active {
+    border-color: rgb(229, 57, 53) !important;
+}
+
+.all_post_pagination_items .ant-pagination-item-active:hover a {
+    color: rgb(229, 57, 53) !important;
+}
+
+.all_post_pagination_items .ant-pagination-item-active a {
+    color: rgb(229, 57, 53) !important;
+}
