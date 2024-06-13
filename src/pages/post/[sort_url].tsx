@@ -29,10 +29,9 @@ export async function getServerSideProps(context: any) {
     const res = await fetch(`${process.env.API_SERVER_URL}/api/get-post`, {
       headers: {
         "Content-Type": "application/json",
-        language: context.locale,
         slug: context.params.sort_url,
-        category_id: "2",
-        key_w: "3J9EBJFE3",
+        category_id: context?.query?.category,
+        key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
       },
     });
     const obj = await res.json();

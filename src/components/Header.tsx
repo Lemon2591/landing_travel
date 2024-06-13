@@ -12,32 +12,8 @@ const Header: FC = () => {
       <header className="header" data-header>
         <div className="overlay" data-overlay></div>
 
-        <div className="header-top">
-          <div className="container">
-            <a className="helpline-box">
-              <div className="wrapper"></div>
-            </a>
-
-            <a href="#" className="logo">
-              {/* <img src="/assets/img/static/logo.svg" alt="Tourly logo" /> */}
-            </a>
-
-            <div className="header-btn-group">
-              <button className="search-btn" aria-label="Search"></button>
-
-              <button
-                className="nav-open-btn"
-                aria-label="Open Menu"
-                data-nav-open-btn
-              />
-            </div>
-          </div>
-        </div>
-
         <div className="header-bottom">
           <div className="container">
-            <ul className="social-list"></ul>
-
             <nav className="navbar" data-navbar>
               <div className="navbar-top">
                 <a href="#" className="logo">
