@@ -56,9 +56,9 @@ function Home() {
 
                     <div className="card-content">
                       <div className="card-rating rating_custom">
-                        {[1, 2, 3, 4, 5]?.map(() => {
+                        {[1, 2, 3, 4, 5]?.map((a, idx) => {
                           return (
-                            <i>
+                            <i key={idx}>
                               <AiFillStar />
                             </i>
                           );
@@ -93,9 +93,9 @@ function Home() {
 
                     <div className="card-content">
                       <div className="card-rating">
-                        {[1, 2, 3, 4, 5]?.map(() => {
+                        {[1, 2, 3, 4, 5]?.map((a, idx) => {
                           return (
-                            <i>
+                            <i key={idx}>
                               <AiFillStar />
                             </i>
                           );
@@ -129,9 +129,9 @@ function Home() {
 
                     <div className="card-content">
                       <div className="card-rating">
-                        {[1, 2, 3, 4, 5]?.map(() => {
+                        {[1, 2, 3, 4, 5]?.map((a, idx) => {
                           return (
-                            <i>
+                            <i key={idx}>
                               <AiFillStar />
                             </i>
                           );

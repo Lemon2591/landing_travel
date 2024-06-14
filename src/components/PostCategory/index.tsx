@@ -76,8 +76,8 @@ const AllPost: FC<any> = (props) => {
     <>
       <MetaSeo {...dataSeo} />
       <div className="all_post">
-        <div className="pt-[160px] bg-[#292929]"></div>
-        <div className="all_post_containe container mt-10">
+        <div className="bg-[#292929] img_post h-[200px] md:h-[400px]"></div>
+        <div className="all_post_containe container md:mt-10">
           <div className="all_post_filter w-[100%] pb-[30px] lg:flex">
             <div className="all_post_filter_items flex lg:w-[70%] items-center my-[10px]">
               <span className="mr-[10px]">Filter:</span>
