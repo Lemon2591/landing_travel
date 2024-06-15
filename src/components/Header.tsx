@@ -23,11 +23,11 @@ const Header: FC = () => {
     },
     {
       content: "Destinations",
-      href: "/post",
+      href: "/travel",
     },
     {
       content: "Food",
-      href: "",
+      href: "/food",
     },
     {
       content: "Culture",
@@ -67,10 +67,13 @@ const Header: FC = () => {
                       router?.pathname === val?.href ? "active_nav" : ""
                     } hover_nav`}
                   >
-                    <Link href={val?.href}>
-                      <a className="font-[600] text-[#121212] text-[16px] ">
-                        {val?.content}
-                      </a>
+                    <Link
+                      href={val?.href}
+                      className="font-[600] text-[#121212] text-[16px] "
+                    >
+                      {/* <a className="font-[600] text-[#121212] text-[16px] "> */}
+                      {val?.content}
+                      {/* </a> */}
                     </Link>
                   </li>
                 );
@@ -97,7 +100,7 @@ const Header: FC = () => {
         </div>
       </header>
 
-      <header>
+      <header className="md:hidden block">
         <nav className="flex justify-between py-[15px] items-center px-[15px]">
           <div className="">
             <a href="">
@@ -134,15 +137,21 @@ const Header: FC = () => {
                 {header?.map((val, idx) => {
                   return (
                     <li key={idx} className={`mx-[25px] my-[25px] text-center`}>
-                      <Link href={val?.href}>
-                        <a
+                      <Link
+                        onClick={() => setToggle(false)}
+                        href={val?.href}
+                        className={`font-[600] text-[#121212] py-[10px] text-[16px] hover_nav ${
+                          router?.pathname === val?.href ? "active_nav" : ""
+                        }`}
+                      >
+                        {/* <a
                           onClick={() => setToggle(false)}
                           className={`font-[600] text-[#121212] py-[10px] text-[16px] hover_nav ${
                             router?.pathname === val?.href ? "active_nav" : ""
                           }`}
-                        >
-                          {val?.content}
-                        </a>
+                        > */}
+                        {val?.content}
+                        {/* </a> */}
                       </Link>
                     </li>
                   );

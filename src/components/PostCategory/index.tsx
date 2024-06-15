@@ -88,7 +88,7 @@ const AllPost: FC<any> = (props) => {
                       className="my-[5px] lg:my-[0]"
                       key={idx}
                       onClick={() =>
-                        router?.push(`/post?location=${val?.value}`)
+                        router?.push(`/travel?location=${val?.value}`)
                       }
                     >
                       {val?.name}
@@ -112,7 +112,7 @@ const AllPost: FC<any> = (props) => {
                   className="relative cursor-pointer overflow-hidden rounded-[8px]"
                   onClick={() =>
                     router?.push(
-                      `/post/${props?.data[0]?.slug}?category=${props?.data[0]?.category.id}`
+                      `/travel/${props?.data[0]?.slug}?category=${props?.data[0]?.category.id}`
                     )
                   }
                 >
@@ -169,7 +169,7 @@ const AllPost: FC<any> = (props) => {
                     className="cursor-pointer lg:mb-[20px]  lg:w-[100%] w-[50%] pr-[10px] lg:pr-[0]"
                     onClick={() =>
                       router?.push(
-                        `/post/${props?.data[1]?.slug}?category=${props?.data[1]?.category.id}`
+                        `/travel/${props?.data[1]?.slug}?category=${props?.data[1]?.category.id}`
                       )
                     }
                   >
@@ -200,7 +200,7 @@ const AllPost: FC<any> = (props) => {
                     className="cursor-pointer lg:w-[100%] w-[50%] pl-[10px] lg:pl-[0]"
                     onClick={() =>
                       router?.push(
-                        `/post/${props?.data[2]?.slug}?category=${props?.data[2]?.category.id}`
+                        `/travel/${props?.data[2]?.slug}?category=${props?.data[2]?.category.id}`
                       )
                     }
                   >
@@ -245,7 +245,7 @@ const AllPost: FC<any> = (props) => {
                         key={val?.id}
                         onClick={() =>
                           router?.push(
-                            `/post/${val?.slug}?category=${val?.category.id}`
+                            `/travel/${val?.slug}?category=${val?.category.id}`
                           )
                         }
                       >

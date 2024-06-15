@@ -25,7 +25,7 @@ function Home() {
               <div className="btn-group">
                 <button
                   className="btn btn-primary"
-                  onClick={() => router.push("/post")}
+                  onClick={() => router.push("/travel")}
                 >
                   Explore
                 </button>
@@ -156,7 +156,7 @@ function Home() {
 
               <button
                 className="btn btn-primary"
-                onClick={() => router.push("/post")}
+                onClick={() => router.push("/travel")}
               >
                 More destintion
               </button>

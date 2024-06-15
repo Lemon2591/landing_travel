@@ -1,9 +1,26 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    newNextLinkBehavior: false,
-  },
-};
+/* eslint-disable */
+const path = require("path");
+const dotenv = require("dotenv");
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
-module.exports = nextConfig;
+dotenv.config();
+// development or other environment
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+module.exports = withBundleAnalyzer({
+  serverRuntimeConfig: {
+    // Will only be available on the server side
+    rootDir: path.join(__dirname, "./"),
+    PORT: isDev ? 3000 : process.env.PORT || 8879,
+  },
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    staticFolder: "/public",
+    isDev, // Pass through env variables
+  },
+  images: {
+    domains: ["api.culturalvn.com", "culturalvn.com", "culturalvn.com"],
+    formats: ["image/avif", "image/webp"],
+  },
+});

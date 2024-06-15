@@ -1,14 +1,16 @@
 import dynamic from "next/dynamic";
-const AllPost: any = dynamic(() => import("@/components/PostCategory"));
+const Post: any = dynamic(() => import("@/components/PostCategory/Post"));
 import Layout from "@/components/Layout";
 
-AllPost.getLayout = function getLayout(page: any) {
+Post.getLayout = function getLayout(page: any) {
   return (
-    <Layout webViewMobile={true} web="all-post">
+    <Layout webViewMobile={true} web="post">
       {page}
     </Layout>
   );
 };
+
+export default Post;
 
 export async function getServerSideProps(context: any) {
   if (
@@ -24,16 +26,14 @@ export async function getServerSideProps(context: any) {
     };
   }
   try {
-    const res = await fetch(
-      `${process.env.API_SERVER_URL}/api/get-feature-post`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
-          location: context?.query?.location || "all",
-        },
-      }
-    );
+    const res = await fetch(`${process.env.API_SERVER_URL}/api/get-post`, {
+      headers: {
+        "Content-Type": "application/json",
+        slug: context.params.sort_url,
+        category_id: context?.query?.category,
+        key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
+      },
+    });
     const obj = await res.json();
     if (!obj || obj.statusCode !== 200) {
       return {
@@ -51,4 +51,3 @@ export async function getServerSideProps(context: any) {
     };
   }
 }
-export default AllPost;
