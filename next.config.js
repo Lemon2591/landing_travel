@@ -1,6 +1,7 @@
 /* eslint-disable */
 const path = require("path");
 const dotenv = require("dotenv");
+dotenv.config();
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -8,6 +9,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 dotenv.config();
 // development or other environment
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+
 module.exports = withBundleAnalyzer({
   serverRuntimeConfig: {
     // Will only be available on the server side
@@ -20,7 +22,7 @@ module.exports = withBundleAnalyzer({
     isDev, // Pass through env variables
   },
   images: {
-    domains: ["api.culturalvn.com", "culturalvn.com", "culturalvn.com"],
+    domains: ["api.culturalvn.com", "culturalvn.com"],
     formats: ["image/avif", "image/webp"],
   },
 });
