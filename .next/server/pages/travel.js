@@ -55,6 +55,7 @@ async function getServerSideProps(context) {
             }
         });
         const obj = await res.json();
+        console.log(obj);
         if (!obj || obj.statusCode !== 200) {
             return {
                 notFound: true

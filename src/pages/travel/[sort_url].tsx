@@ -34,6 +34,8 @@ export async function getServerSideProps(context: any) {
         key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
       },
     });
+
+    console.log(res);
     const obj = await res.json();
     if (!obj || obj.statusCode !== 200) {
       return {

@@ -55,6 +55,7 @@ async function getServerSideProps(context) {
                 key_w: `${"3J9EBJFE3"}`
             }
         });
+        console.log(res);
         const obj = await res.json();
         if (!obj || obj.statusCode !== 200) {
             return {
