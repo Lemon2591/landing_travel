@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 const Post: any = dynamic(() => import("@/components/PostCategory/Post"));
 import Layout from "@/components/Layout";
+import { KEY } from "../../util/keyInstance";
 
 Post.getLayout = function getLayout(page: any) {
   return (
@@ -30,8 +31,8 @@ export async function getServerSideProps(context: any) {
       headers: {
         "Content-Type": "application/json",
         slug: context.params.sort_url,
-        category_id: context?.query?.category,
-        key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
+        category: context?.query?.category,
+        key: KEY,
       },
     });
 

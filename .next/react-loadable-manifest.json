@@ -11,7 +11,7 @@
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
       "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.bf882f5185953756.js"
+      "static/chunks/393.7b8a51d21d590bb0.js"
     ]
   },
   "index.tsx -> @/components/Home/Home": {
@@ -33,7 +33,7 @@
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
       "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.bf882f5185953756.js"
+      "static/chunks/393.7b8a51d21d590bb0.js"
     ]
   }
 }

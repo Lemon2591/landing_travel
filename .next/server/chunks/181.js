@@ -406,7 +406,7 @@ const fetchApi = async (url)=>{
         const res = await fetch(`${"https://api.culturalvn.com"}${url}`, {
             headers: {
                 "Content-Type": "application/json",
-                key_w: `${"3J9EBJFE3"}`
+                key: `${process.env.keyEB}`
             }
         });
         const obj = await res.json();

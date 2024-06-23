@@ -5,7 +5,7 @@ const fetchApi = async (url) => {
       {
         headers: {
           "Content-Type": "application/json",
-          key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
+          key: `${process.env.keyEB}`,
         },
       }
     );

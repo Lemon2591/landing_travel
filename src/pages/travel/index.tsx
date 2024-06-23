@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { KEY } from "../../util/keyInstance";
 const AllPost: any = dynamic(() => import("@/components/PostCategory"));
 import Layout from "@/components/Layout";
 
@@ -29,7 +30,7 @@ export async function getServerSideProps(context: any) {
       {
         headers: {
           "Content-Type": "application/json",
-          key_w: `${process.env.NEXT_PUBLIC_API_KEY_WEB}`,
+          key: KEY,
           location: context?.query?.location || "all",
           category: context?.resolvedUrl?.replace("/", ""),
         },
@@ -37,8 +38,6 @@ export async function getServerSideProps(context: any) {
     );
 
     const obj = await res.json();
-
-    console.log(obj);
     if (!obj || obj.statusCode !== 200) {
       return {
         notFound: true,

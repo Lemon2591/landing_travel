@@ -18,6 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5152);
 /* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4763);
+/* harmony import */ var _util_keyInstance__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8073);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Layout__WEBPACK_IMPORTED_MODULE_2__]);
 _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -29,6 +30,7 @@ const Post = next_dynamic__WEBPACK_IMPORTED_MODULE_1___default()(()=>Promise.all
         ]
     }
 });
+
 
 Post.getLayout = function getLayout(page) {
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
@@ -51,8 +53,8 @@ async function getServerSideProps(context) {
             headers: {
                 "Content-Type": "application/json",
                 slug: context.params.sort_url,
-                category_id: context?.query?.category,
-                key_w: `${"3J9EBJFE3"}`
+                category: context?.query?.category,
+                key: _util_keyInstance__WEBPACK_IMPORTED_MODULE_3__/* .KEY */ .F
             }
         });
         const obj = await res.json();
@@ -75,6 +77,17 @@ async function getServerSideProps(context) {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 8073:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "F": () => (/* binding */ KEY)
+/* harmony export */ });
+const KEY = "3J9EBJFE3";
+
 
 /***/ }),
 
