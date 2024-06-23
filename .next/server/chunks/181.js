@@ -403,7 +403,7 @@ __webpack_async_result__();
 /* harmony export */ });
 const fetchApi = async (url)=>{
     try {
-        const res = await fetch(`${"http://54.252.245.182:6688"}${url}`, {
+        const res = await fetch(`${"https://api.culturalvn.com"}${url}`, {
             headers: {
                 "Content-Type": "application/json",
                 key_w: `${"3J9EBJFE3"}`
