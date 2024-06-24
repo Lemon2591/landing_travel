@@ -106,9 +106,9 @@ const Header = ()=>{
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: "https://static.tacdn.com/img2/brand_refresh/special/pride_month_Tripadvisor_lockup_horizontal_secondary.svg",
+                                        src: "/assets/img/static/logo.svg",
                                         alt: "",
-                                        className: "w-[100px]"
+                                        className: "w-[190px]"
                                     })
                                 })
                             }),
@@ -166,9 +166,9 @@ const Header = ()=>{
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: "https://static.tacdn.com/img2/brand_refresh/special/pride_month_Tripadvisor_lockup_horizontal_secondary.svg",
+                                        src: "/assets/img/static/logo.svg",
                                         alt: "",
-                                        className: "w-[100px]"
+                                        className: "w-[190px]"
                                     })
                                 })
                             }),
@@ -266,19 +266,19 @@ const Layout = ({ children  })=>{
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "shortcut icon",
-                        href: "/assets/img/home/favicon.png"
+                        href: "/assets/img/static/favicon.png"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "shortcut icon",
-                        href: "/assets/img/home/favicon.ico"
+                        href: "/assets/img/static/favicon.ico"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "icon",
-                        href: "/assets/img/home/favicon.png"
+                        href: "/assets/img/static/favicon.png"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "icon",
-                        href: "/assets/img/home/favicon.ico",
+                        href: "/assets/img/static/favicon.ico",
                         sizes: "any"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {

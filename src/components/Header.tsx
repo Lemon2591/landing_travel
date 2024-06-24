@@ -52,9 +52,9 @@ const Header: FC = () => {
             <div className="flex items-center">
               <a href="">
                 <img
-                  src="https://static.tacdn.com/img2/brand_refresh/special/pride_month_Tripadvisor_lockup_horizontal_secondary.svg"
+                  src="/assets/img/static/logo.svg"
                   alt=""
-                  className="w-[100px]"
+                  className="w-[190px]"
                 />
               </a>
             </div>
@@ -105,9 +105,9 @@ const Header: FC = () => {
           <div className="">
             <a href="">
               <img
-                src="https://static.tacdn.com/img2/brand_refresh/special/pride_month_Tripadvisor_lockup_horizontal_secondary.svg"
+                src="/assets/img/static/logo.svg"
                 alt=""
-                className="w-[100px]"
+                className="w-[190px]"
               />
             </a>
           </div>

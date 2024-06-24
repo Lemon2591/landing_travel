@@ -35,8 +35,6 @@ export async function getServerSideProps(context: any) {
         key: KEY,
       },
     });
-
-    console.log(res);
     const obj = await res.json();
     if (!obj || obj.statusCode !== 200) {
       return {

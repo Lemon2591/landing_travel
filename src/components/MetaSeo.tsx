@@ -1,6 +1,6 @@
 import Head from "next/head";
 export default function MetaSeo(props: any) {
-  const urlSeo = "https://lemondev.id.vn";
+  const urlSeo = "https://culturalvn.com";
   let { url, type, title, description, image, domain, card, keywords } = props;
   if (!url) {
     url = urlSeo;
@@ -9,24 +9,23 @@ export default function MetaSeo(props: any) {
     type = "website";
   }
   if (!title) {
-    title = "Viet Nam Travel";
+    title = "Visit Vietnam: The Official Tourism Website of Vietnam";
   }
   if (!description) {
     description =
-      "Lập trình web, hệ thống CMS, website bán hàng, quảng cáo, UX/UI";
+      "Discover the highlights of Vietnam through the country's official tourism website. Plan your trip with advice on Vietnam's best destinations, what to do in Vietnam, visas for Vietnam, where to go in Vietnam, and much more.";
   }
   if (!image) {
-    image = `${urlSeo}/assets/img/home/seo.png`;
+    image = `${urlSeo}/assets/img/static/image_a.jpg`;
   }
   if (!domain) {
-    domain = "https://lemondev.id.vn";
+    domain = "https://culturalvn.com";
   }
   if (!card) {
     card = "summary_large_image";
   }
   if (!keywords) {
-    keywords =
-      "IT - Information, ReactJS, NextJS, Express, Management, Development, Freelancer";
+    keywords = "vietnam tourism, vietnam travel, vietnam website";
   }
 
   return (

@@ -29,7 +29,6 @@ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.th
 
 
 const Post = (props)=>{
-    console.log(props);
     const dataSeo = {
         description: props?.data?.post?.des_seo,
         image: props?.data?.post?.thumbnail,

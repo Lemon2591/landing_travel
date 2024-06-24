@@ -13,11 +13,11 @@ const Layout: FC<any> = ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <link rel="shortcut icon" href="/assets/img/home/favicon.png" />
-        <link rel="shortcut icon" href="/assets/img/home/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/img/static/favicon.png" />
+        <link rel="shortcut icon" href="/assets/img/static/favicon.ico" />
 
-        <link rel="icon" href="/assets/img/home/favicon.png" />
-        <link rel="icon" href="/assets/img/home/favicon.ico" sizes="any" />
+        <link rel="icon" href="/assets/img/static/favicon.png" />
+        <link rel="icon" href="/assets/img/static/favicon.ico" sizes="any" />
         <title>LemonDev</title>
       </Head>
 

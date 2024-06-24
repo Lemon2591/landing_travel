@@ -57,7 +57,6 @@ async function getServerSideProps(context) {
                 key: _util_keyInstance__WEBPACK_IMPORTED_MODULE_3__/* .KEY */ .F
             }
         });
-        console.log(res);
         const obj = await res.json();
         if (!obj || obj.statusCode !== 200) {
             return {

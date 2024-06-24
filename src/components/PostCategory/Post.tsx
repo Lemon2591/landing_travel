@@ -11,7 +11,6 @@ import moment from "moment";
 import { useRouter } from "next/router";
 
 const Post = (props: any) => {
-  console.log(props);
   const dataSeo = {
     description: props?.data?.post?.des_seo,
     image: props?.data?.post?.thumbnail,

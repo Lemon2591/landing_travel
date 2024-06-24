@@ -64,3 +64,42 @@ code {
     margin-right: 1.5rem;
     padding-right: 1rem
 }
+
+.mce-content-body h1 {
+    font-size: 2em !important;
+    font-weight: bold !important;
+}
+
+
+.mce-content-body h2 {
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    letter-spacing: 1.1px;
+    line-height: 28px;
+
+}
+
+.mce-content-body h3 {
+    font-size: 1.17em !important;
+    font-weight: bold !important;
+
+}
+
+
+
+.mce-content-body h4 {
+    font-size: 1em;
+    font-weight: bold !important;
+}
+
+
+
+.mce-content-body h5 {
+    font-size: .83em;
+    font-weight: bold !important;
+}
+
+.mce-content-body h6 {
+    font-size: .67em;
+    font-weight: bold !important;
+}

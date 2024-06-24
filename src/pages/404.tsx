@@ -6,14 +6,14 @@ import Link from "next/link";
 const Custom404 = () => {
   return (
     <>
-      <MetaSeo title="Lemondev - 404" />
-      <div className="page_error h-[93.3vh] flex items-center justify-center">
+      <MetaSeo title="Cultural Viet Nam - 404" />
+      <div className="page_error h-[93.3vh] flex items-center justify-center mx-10">
         <div
           className="d-flex h-100 w-100"
           data-bs-spy="scroll"
           data-bs-target="#navScroll"
         >
-          <div className="h-100 container-fluid">
+          <div className="h-100 container-fluid ">
             <div className="h-100 row d-flex align-items-stretch">
               <div className="col-12 d-flex align-items-start flex-column px-vw-5">
                 <header className="mb-auto py-vh-2 col-12">

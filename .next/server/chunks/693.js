@@ -15,7 +15,7 @@ exports.modules = {
 
 
 function MetaSeo(props) {
-    const urlSeo = "https://lemondev.id.vn";
+    const urlSeo = "https://culturalvn.com";
     let { url , type , title , description , image , domain , card , keywords  } = props;
     if (!url) {
         url = urlSeo;
@@ -24,22 +24,22 @@ function MetaSeo(props) {
         type = "website";
     }
     if (!title) {
-        title = "Viet Nam Travel";
+        title = "Visit Vietnam: The Official Tourism Website of Vietnam";
     }
     if (!description) {
-        description = "Lập tr\xecnh web, hệ thống CMS, website b\xe1n h\xe0ng, quảng c\xe1o, UX/UI";
+        description = "Discover the highlights of Vietnam through the country's official tourism website. Plan your trip with advice on Vietnam's best destinations, what to do in Vietnam, visas for Vietnam, where to go in Vietnam, and much more.";
     }
     if (!image) {
-        image = `${urlSeo}/assets/img/home/seo.png`;
+        image = `${urlSeo}/assets/img/static/image_a.jpg`;
     }
     if (!domain) {
-        domain = "https://lemondev.id.vn";
+        domain = "https://culturalvn.com";
     }
     if (!card) {
         card = "summary_large_image";
     }
     if (!keywords) {
-        keywords = "IT - Information, ReactJS, NextJS, Express, Management, Development, Freelancer";
+        keywords = "vietnam tourism, vietnam travel, vietnam website";
     }
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
