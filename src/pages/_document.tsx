@@ -23,6 +23,17 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
           <link rel="icon" href="/assets/img/favicon/favicon.png" />
           <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="any" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-GN5ZM8NDBP"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: ` window.dataLayer = window.dataLayer || []; function gtag()
+            {dataLayer.push(arguments)}
+            gtag('js', new Date()); gtag('config', 'G-GN5ZM8NDBP');`,
+            }}
+          />
         </Head>
         <body>
           <Main />

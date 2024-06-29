@@ -49,6 +49,17 @@ class MyDocument extends (next_document__WEBPACK_IMPORTED_MODULE_1___default()) 
                             rel: "icon",
                             href: "/assets/img/favicon/favicon.ico",
                             sizes: "any"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                            async: true,
+                            src: "https://www.googletagmanager.com/gtag/js?id=G-GN5ZM8NDBP"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                            dangerouslySetInnerHTML: {
+                                __html: ` window.dataLayer = window.dataLayer || []; function gtag()
+            {dataLayer.push(arguments)}
+            gtag('js', new Date()); gtag('config', 'G-GN5ZM8NDBP');`
+                            }
                         })
                     ]
                 }),

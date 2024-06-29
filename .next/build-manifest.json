@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/iG7t1ZOcRfik8kunMVjPs/_buildManifest.js",
-    "static/iG7t1ZOcRfik8kunMVjPs/_ssgManifest.js"
+    "static/U28a-iwpEhpx0Ay1R9GDy/_buildManifest.js",
+    "static/U28a-iwpEhpx0Ay1R9GDy/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -46,6 +46,12 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-e4af676da9bc7d78.js",
       "static/chunks/pages/food/[sort_url]-45229e4f7bcde706.js"
+    ],
+    "/sitemap.xml": [
+      "static/chunks/webpack-4cd5ca0e902c9417.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-e4af676da9bc7d78.js",
+      "static/chunks/pages/sitemap.xml-9f88d223db5d7fd0.js"
     ],
     "/travel": [
       "static/chunks/webpack-4cd5ca0e902c9417.js",
