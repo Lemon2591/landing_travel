@@ -96,6 +96,44 @@ function MetaSeo(props) {
         },
         keywords: keywords?.split(",")
     };
+    const dataSchema_v2 = {
+        "@context": "http://schema.org",
+        "@type": [
+            "Organization",
+            "NewsMediaOrganization"
+        ],
+        name: title,
+        url: urlSeo,
+        "@id": {
+            "@id": `${urlSeo}/#Organization`
+        },
+        slogan: title,
+        image: image,
+        logo: `${urlSeo}/assets/img/favicon/favicon.ico`,
+        email: "",
+        telephone: "",
+        additionalType: "",
+        sameAs: [
+            "https://www.facebook.com/profile.php?id=61561475609297"
+        ],
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "",
+            addressLocality: "",
+            addressRegion: "H\xe0 Nội",
+            addressCountry: "VN",
+            postalCode: "100000"
+        },
+        contactPoint: [
+            {
+                "@type": "ContactPoint",
+                telephone: "",
+                contactOption: "TollFree",
+                contactType: "customer service",
+                areaServed: ""
+            }
+        ]
+    };
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
             children: [
@@ -162,6 +200,12 @@ function MetaSeo(props) {
                     type: "application/ld+json",
                     dangerouslySetInnerHTML: {
                         __html: JSON.stringify(schema)
+                    }
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                    type: "application/ld+json",
+                    dangerouslySetInnerHTML: {
+                        __html: JSON.stringify(dataSchema_v2)
                     }
                 })
             ]

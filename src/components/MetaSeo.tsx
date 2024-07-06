@@ -88,6 +88,38 @@ export default function MetaSeo(props: any) {
     keywords: keywords?.split(","),
   };
 
+  const dataSchema_v2 = {
+    "@context": "http://schema.org",
+    "@type": ["Organization", "NewsMediaOrganization"],
+    name: title,
+    url: urlSeo,
+    "@id": { "@id": `${urlSeo}/#Organization` },
+    slogan: title,
+    image: image,
+    logo: `${urlSeo}/assets/img/favicon/favicon.ico`,
+    email: "",
+    telephone: "",
+    additionalType: "",
+    sameAs: ["https://www.facebook.com/profile.php?id=61561475609297"],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "",
+      addressLocality: "",
+      addressRegion: "Hà Nội",
+      addressCountry: "VN",
+      postalCode: "100000",
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "",
+        contactOption: "TollFree",
+        contactType: "customer service",
+        areaServed: "",
+      },
+    ],
+  };
+
   return (
     <>
       <Head>
@@ -110,6 +142,12 @@ export default function MetaSeo(props: any) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(schema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(dataSchema_v2),
           }}
         />
       </Head>
