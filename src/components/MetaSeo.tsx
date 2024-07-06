@@ -48,7 +48,7 @@ export default function MetaSeo(props: any) {
     dataSchema = data;
   }
 
-  const schema = {
+  const schema_v1 = {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
     mainEntityOfPage: `${dataSchema.mainEntityOfPage}/#WebPage`,
@@ -93,7 +93,7 @@ export default function MetaSeo(props: any) {
     "@type": ["Organization", "NewsMediaOrganization"],
     name: title,
     url: urlSeo,
-    "@id": { "@id": `${urlSeo}/#Organization` },
+    "@id": `${urlSeo}/#Organization`,
     slogan: title,
     image: image,
     logo: `${urlSeo}/assets/img/favicon/favicon.ico`,
@@ -120,6 +120,37 @@ export default function MetaSeo(props: any) {
     ],
   };
 
+  const dataSchema_v3 = {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Trang chủ",
+          item: urlSeo,
+        },
+      ],
+      [
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Travel",
+          item: `${urlSeo}/travel`,
+        },
+      ],
+      [
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Food",
+          item: `${urlSeo}/food`,
+        },
+      ],
+    ],
+  };
+
   return (
     <>
       <Head>
@@ -141,13 +172,19 @@ export default function MetaSeo(props: any) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema),
+            __html: JSON.stringify(schema_v1),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(dataSchema_v2),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(dataSchema_v3),
           }}
         />
       </Head>

@@ -51,7 +51,7 @@ function MetaSeo(props) {
         };
         dataSchema = data;
     }
-    const schema = {
+    const schema_v1 = {
         "@context": "http://schema.org",
         "@type": "NewsArticle",
         mainEntityOfPage: `${dataSchema.mainEntityOfPage}/#WebPage`,
@@ -104,9 +104,7 @@ function MetaSeo(props) {
         ],
         name: title,
         url: urlSeo,
-        "@id": {
-            "@id": `${urlSeo}/#Organization`
-        },
+        "@id": `${urlSeo}/#Organization`,
         slogan: title,
         image: image,
         logo: `${urlSeo}/assets/img/favicon/favicon.ico`,
@@ -132,6 +130,36 @@ function MetaSeo(props) {
                 contactType: "customer service",
                 areaServed: ""
             }
+        ]
+    };
+    const dataSchema_v3 = {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Trang chủ",
+                    item: urlSeo
+                }
+            ],
+            [
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Travel",
+                    item: `${urlSeo}/travel`
+                }
+            ],
+            [
+                {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Food",
+                    item: `${urlSeo}/food`
+                }
+            ]
         ]
     };
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -199,13 +227,19 @@ function MetaSeo(props) {
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                     type: "application/ld+json",
                     dangerouslySetInnerHTML: {
-                        __html: JSON.stringify(schema)
+                        __html: JSON.stringify(schema_v1)
                     }
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                     type: "application/ld+json",
                     dangerouslySetInnerHTML: {
                         __html: JSON.stringify(dataSchema_v2)
+                    }
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                    type: "application/ld+json",
+                    dangerouslySetInnerHTML: {
+                        __html: JSON.stringify(dataSchema_v3)
                     }
                 })
             ]
