@@ -16,7 +16,7 @@ exports.modules = {
 
 function MetaSeo(props) {
     const urlSeo = "https://culturalvn.com";
-    let { url , type , title , description , image , domain , card , keywords  } = props;
+    let { url , type , title , description , image , domain , card , keywords , dataSchema  } = props;
     if (!url) {
         url = urlSeo;
     }
@@ -41,6 +41,9 @@ function MetaSeo(props) {
     if (!keywords) {
         keywords = "vietnam tourism, vietnam travel, vietnam website";
     }
+    // if(!dataSchema) {
+    //   dataSchema?.
+    // }
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
             children: [
