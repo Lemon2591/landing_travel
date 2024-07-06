@@ -39,7 +39,12 @@ const AllPost = (props)=>{
         image: props?.data?.thumbnail,
         title: "Visit Vietnam: The Official Tourism Website of Vietnam",
         domain: "https://culturalvn.com",
-        keywords: "vietnam tourism, vietnam travel, vietnam website"
+        keywords: "vietnam tourism, vietnam travel, vietnam website",
+        dataSchema: {
+            mainEntityOfPage: props?.data?.post?.url,
+            idUrl: props?.data?.post?.url,
+            articleSection: props?.data?.post?.category?.category_name
+        }
     };
     const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({});
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
@@ -120,7 +125,7 @@ const AllPost = (props)=>{
                                                 children: list_filter?.map((val, idx)=>{
                                                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                                         className: "my-[5px] lg:my-[0]",
-                                                        onClick: ()=>router?.push(`/travel?location=${val?.value}`),
+                                                        onClick: ()=>router?.push(`/${router?.pathname?.replace("/", "")}?location=${val?.value}`),
                                                         children: val?.name
                                                     }, idx);
                                                 })
@@ -155,7 +160,7 @@ const AllPost = (props)=>{
                                             className: "lg:w-[80%] lg:pr-[8px]",
                                             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                 className: "relative cursor-pointer overflow-hidden rounded-[8px]",
-                                                onClick: ()=>router?.push(`/travel/${props?.data[0]?.slug}?category=${props?.data[0]?.category.id}`),
+                                                onClick: ()=>router?.push(`/${router?.pathname?.replace("/", "")}/${props?.data[0]?.slug}`),
                                                 children: [
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                         className: "rounded-[8px]",
@@ -238,7 +243,7 @@ const AllPost = (props)=>{
                                                 children: [
                                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                         className: "cursor-pointer lg:mb-[20px]  lg:w-[100%] w-[50%] pr-[10px] lg:pr-[0]",
-                                                        onClick: ()=>router?.push(`/travel/${props?.data[1]?.slug}?category=${props?.data[1]?.category.id}`),
+                                                        onClick: ()=>router?.push(`/${router?.pathname?.replace("/", "")}/${props?.data[1]?.slug}`),
                                                         children: [
                                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                                 className: "overflow-hidden pb-[5px]",
@@ -272,7 +277,7 @@ const AllPost = (props)=>{
                                                     }),
                                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                         className: "cursor-pointer lg:w-[100%] w-[50%] pl-[10px] lg:pl-[0]",
-                                                        onClick: ()=>router?.push(`/travel/${props?.data[2]?.slug}?category=${props?.data[2]?.category.id}`),
+                                                        onClick: ()=>router?.push(`/${router?.pathname?.replace("/", "")}/${props?.data[2]?.slug}`),
                                                         children: [
                                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                                 className: "overflow-hidden pb-[5px]",
@@ -329,7 +334,7 @@ const AllPost = (props)=>{
                                                 children: data?.data?.map((val)=>{
                                                     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                         className: "cursor-pointer md:w-[50%] lg:w-[33.33%] px-[8px] py-[10px] w-[100%]",
-                                                        onClick: ()=>router?.push(`/travel/${val?.slug}?category=${val?.category.id}`),
+                                                        onClick: ()=>router?.push(`/${val?.category?.slug}/${val?.slug}`),
                                                         children: [
                                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                                 className: "overflow-hidden  pb-[5px]",

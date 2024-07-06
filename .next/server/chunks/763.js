@@ -83,7 +83,7 @@ const Header = ()=>{
         },
         {
             content: "Culture",
-            href: ""
+            href: "/culture"
         }
     ];
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -116,7 +116,7 @@ const Header = ()=>{
                                 className: "flex justify-center",
                                 children: header?.map((val, idx)=>{
                                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
-                                        className: `mx-[25px] py-[5px] ${router?.pathname === val?.href ? "active_nav" : ""} hover_nav`,
+                                        className: `mx-[25px] py-[5px] ${router?.pathname?.split("/")[1] === val?.href?.replace("/", "") ? "active_nav" : ""} hover_nav`,
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                             href: val?.href,
                                             className: "font-[600] text-[#121212] text-[16px] ",

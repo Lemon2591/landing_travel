@@ -13,12 +13,11 @@ function Home() {
   return (
     <>
       <MetaSeo />
-
       <main>
         <article>
           <section className="hero" id="home">
             <div className="container">
-              <h2 className="h1 hero-title">Journey to explore Viet Nam</h2>
+              <h1 className="h1 hero-title">Journey to explore Viet Nam</h1>
 
               <p className="hero-text">Let’s live to the fullest in Vietnam!</p>
 

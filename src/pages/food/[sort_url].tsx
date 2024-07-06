@@ -27,11 +27,18 @@ export async function getServerSideProps(context: any) {
     };
   }
   try {
+    const categoryID =
+      context?.resolvedUrl?.split("/")[1] === "food"
+        ? "1"
+        : context?.resolvedUrl?.split("/")[1] === "travel"
+        ? "2"
+        : "";
+
     const res = await fetch(`${process.env.API_SERVER_URL}/api/get-post`, {
       headers: {
         "Content-Type": "application/json",
         slug: context.params.sort_url,
-        category: context?.query?.category,
+        category: categoryID,
         key: KEY,
       },
     });

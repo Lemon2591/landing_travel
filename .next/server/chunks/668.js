@@ -29,14 +29,19 @@ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.th
 
 
 const Post = (props)=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     const dataSeo = {
         description: props?.data?.post?.des_seo,
         image: props?.data?.post?.thumbnail,
         title: props?.data?.post?.title,
         domain: props?.data?.post?.url,
-        keywords: props?.data?.post?.key_seo
+        keywords: props?.data?.post?.key_seo,
+        dataSchema: {
+            mainEntityOfPage: props?.data?.post?.url,
+            idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
+            articleSection: router?.pathname.replace("/", "")
+        }
     };
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MetaSeo__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
@@ -121,7 +126,7 @@ const Post = (props)=>{
                                 children: [
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: "post_category_back lg:mb-[20px] mb-[10px]",
-                                        onClick: ()=>router.push("/travel"),
+                                        onClick: ()=>router.push(`/${router?.pathname?.split("/")[1]}`),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineArrowLeft, {})
@@ -191,7 +196,7 @@ const Post = (props)=>{
                                         children: props?.data?.suggest?.map((val, idx)=>{
                                             return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                 className: "cursor-pointer lg:mb-[20px]  lg:w-[100%] w-[100%] pr-[10px] lg:pr-[0] md:w-[50%] mb-[10px] lg:100%",
-                                                onClick: ()=>router?.push(`/travel/${val.slug}?category=${val.category.id}`),
+                                                onClick: ()=>router?.push(`/${val?.category?.slug}/${val.slug}`),
                                                 children: [
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                         className: "overflow-hidden pb-[5px]",

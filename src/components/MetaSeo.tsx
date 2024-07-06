@@ -37,9 +37,57 @@ export default function MetaSeo(props: any) {
   if (!keywords) {
     keywords = "vietnam tourism, vietnam travel, vietnam website";
   }
-  // if(!dataSchema) {
-  //   dataSchema?.
-  // }
+  if (!dataSchema) {
+    const data = {
+      mainEntityOfPage: "https://culturalvn.com",
+      idUrl: "https://culturalvn.com",
+      articleSection: "Travel", // Thể loại
+      datePublished: "",
+      dateModified: "",
+    };
+    dataSchema = data;
+  }
+
+  const schema = {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    mainEntityOfPage: `${dataSchema.mainEntityOfPage}/#WebPage`,
+    "@id": `${dataSchema.idUrl}/#NewsArticle`,
+    headline: title,
+    name: title,
+    description: description,
+    articleSection: dataSchema.articleSection,
+    inLanguage: "vi,en",
+    url: url,
+    image: {
+      "@context": "http://schema.org",
+      "@type": "ImageObject",
+      url: image,
+      caption: title,
+      width: "1200",
+      height: "630",
+    },
+    isPartOf: {
+      "@type": "CollectionPage",
+      "@id": dataSchema.idUrl,
+      name: dataSchema.articleSection,
+      abstract: title,
+      publisher: { "@id": `${urlSeo}/#Organization` },
+    },
+    author: {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "@id": `${urlSeo}#Person`,
+      name: "Cultural Viet Nam",
+      url: urlSeo,
+      worksFor: { "@id": `${urlSeo}/#Organization` },
+    },
+    datePublished: dataSchema?.datePublished,
+    dateModified: dataSchema?.dateModified,
+    publisher: { "@id": `${urlSeo}/#Organization` },
+    keywords: keywords?.split(","),
+  };
+
   return (
     <>
       <Head>
@@ -58,60 +106,12 @@ export default function MetaSeo(props: any) {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        {/* <script
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: {
-              "@context": "http://schema.org",
-              "@type": "NewsArticle",
-              mainEntityOfPage:
-                "https://dantri.com.vn/xa-hoi/da-tim-ra-nguyen-nhan-vu-ngo-doc-banh-mi-o-dong-nai-20240504184156255.htm#WebPage",
-              "@id":
-                "https://dantri.com.vn/xa-hoi/da-tim-ra-nguyen-nhan-vu-ngo-doc-banh-mi-o-dong-nai-20240504184156255.htm#NewsArticle",
-              headline: "Đã tìm ra nguyên nhân vụ ngộ độc bánh mì ở Đồng Nai",
-              name: "Đã tìm ra nguyên nhân vụ ngộ độc bánh mì ở Đồng Nai",
-              description:
-                "(Dân trí) - Kết quả xét nghiệm các mẫu phẩm vụ ngộ độc sau khi ăn bánh mì ở TP Long Khánh cho kết quả nhiễm vi khuẩn Salmonella và E.coli.",
-              articleSection: "Xã hội",
-              inLanguage: "vi,en",
-              url: "https://dantri.com.vn/xa-hoi/da-tim-ra-nguyen-nhan-vu-ngo-doc-banh-mi-o-dong-nai-20240504184156255.htm",
-              image: {
-                "@context": "http://schema.org",
-                "@type": "ImageObject",
-                url: "https://cdnphoto.dantri.com.vn/voU9-9_k8kEB-3NsdDusSBMxaaU=/zoom/1200_630/2024/05/07/banhmi1-edited-1715072633927.jpeg",
-                caption: "Đã tìm ra nguyên nhân vụ ngộ độc bánh mì ở Đồng Nai",
-                width: "1200",
-                height: "630",
-              },
-              isPartOf: {
-                "@type": "CollectionPage",
-                "@id": "https://dantri.com.vn/xa-hoi.htm",
-                name: "Xã hội",
-                abstract:
-                  "Tin tức, hình ảnh, video, sự kiện Xã hội mới nhất cập nhật liên tục trong ngày",
-                publisher: { "@id": "https://dantri.com.vn/#Organization" },
-              },
-              author: {
-                "@context": "http://schema.org",
-                "@type": "Person",
-                "@id":
-                  "https://dantri.com.vn/tac-gia/hoang-binh-3205.htm#Person",
-                name: "Hoàng Bình",
-                url: "https://dantri.com.vn/tac-gia/hoang-binh-3205.htm",
-                worksFor: { "@id": "https://dantri.com.vn/#Organization" },
-              },
-              datePublished: "2024-05-07T16:22:58+07:00",
-              dateModified: "2024-05-07T16:22:58+07:00",
-              publisher: { "@id": "https://dantri.com.vn/#Organization" },
-              keywords: [
-                "Xã hội",
-                "Tin nóng",
-                "ngộ độc",
-                "long khánh",
-                "bánh mỳ",
-              ],
-            },
+            __html: JSON.stringify(schema),
           }}
-        /> */}
+        />
       </Head>
     </>
   );

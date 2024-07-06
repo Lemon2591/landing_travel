@@ -31,9 +31,10 @@ const Header: FC = () => {
     },
     {
       content: "Culture",
-      href: "",
+      href: "/culture",
     },
   ];
+
   return (
     <>
       <header
@@ -64,7 +65,10 @@ const Header: FC = () => {
                   <li
                     key={idx}
                     className={`mx-[25px] py-[5px] ${
-                      router?.pathname === val?.href ? "active_nav" : ""
+                      router?.pathname?.split("/")[1] ===
+                      val?.href?.replace("/", "")
+                        ? "active_nav"
+                        : ""
                     } hover_nav`}
                   >
                     <Link

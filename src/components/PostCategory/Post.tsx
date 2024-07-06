@@ -11,15 +11,20 @@ import moment from "moment";
 import { useRouter } from "next/router";
 
 const Post = (props: any) => {
+  const router = useRouter();
   const dataSeo = {
     description: props?.data?.post?.des_seo,
     image: props?.data?.post?.thumbnail,
     title: props?.data?.post?.title,
     domain: props?.data?.post?.url,
     keywords: props?.data?.post?.key_seo,
+    dataSchema: {
+      mainEntityOfPage: props?.data?.post?.url,
+      idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
+      articleSection: router?.pathname.replace("/", ""), // Thể loại
+    },
   };
 
-  const router = useRouter();
   return (
     <>
       <MetaSeo {...dataSeo} />
@@ -72,7 +77,9 @@ const Post = (props: any) => {
             <div className="post_category">
               <div
                 className="post_category_back lg:mb-[20px] mb-[10px]"
-                onClick={() => router.push("/travel")}
+                onClick={() =>
+                  router.push(`/${router?.pathname?.split("/")[1]}`)
+                }
               >
                 <i>
                   <AiOutlineArrowLeft />
@@ -118,9 +125,7 @@ const Post = (props: any) => {
                       key={idx}
                       className="cursor-pointer lg:mb-[20px]  lg:w-[100%] w-[100%] pr-[10px] lg:pr-[0] md:w-[50%] mb-[10px] lg:100%"
                       onClick={() =>
-                        router?.push(
-                          `/travel/${val.slug}?category=${val.category.id}`
-                        )
+                        router?.push(`/${val?.category?.slug}/${val.slug}`)
                       }
                     >
                       <div className="overflow-hidden pb-[5px]">

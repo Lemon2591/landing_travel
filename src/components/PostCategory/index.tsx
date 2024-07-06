@@ -14,11 +14,17 @@ const AllPost: FC<any> = (props) => {
     title: "Visit Vietnam: The Official Tourism Website of Vietnam",
     domain: "https://culturalvn.com",
     keywords: "vietnam tourism, vietnam travel, vietnam website",
+    dataSchema: {
+      mainEntityOfPage: props?.data?.post?.url,
+      idUrl: props?.data?.post?.url,
+      articleSection: props?.data?.post?.category?.category_name, // Thể loại
+    },
   };
 
   const [data, setData] = useState<any>({});
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const list_filter = [
     {
       id: 1,
@@ -88,7 +94,11 @@ const AllPost: FC<any> = (props) => {
                       className="my-[5px] lg:my-[0]"
                       key={idx}
                       onClick={() =>
-                        router?.push(`/travel?location=${val?.value}`)
+                        router?.push(
+                          `/${router?.pathname?.replace("/", "")}?location=${
+                            val?.value
+                          }`
+                        )
                       }
                     >
                       {val?.name}
@@ -112,7 +122,9 @@ const AllPost: FC<any> = (props) => {
                   className="relative cursor-pointer overflow-hidden rounded-[8px]"
                   onClick={() =>
                     router?.push(
-                      `/travel/${props?.data[0]?.slug}?category=${props?.data[0]?.category.id}`
+                      `/${router?.pathname?.replace("/", "")}/${
+                        props?.data[0]?.slug
+                      }`
                     )
                   }
                 >
@@ -169,7 +181,9 @@ const AllPost: FC<any> = (props) => {
                     className="cursor-pointer lg:mb-[20px]  lg:w-[100%] w-[50%] pr-[10px] lg:pr-[0]"
                     onClick={() =>
                       router?.push(
-                        `/travel/${props?.data[1]?.slug}?category=${props?.data[1]?.category.id}`
+                        `/${router?.pathname?.replace("/", "")}/${
+                          props?.data[1]?.slug
+                        }`
                       )
                     }
                   >
@@ -200,7 +214,9 @@ const AllPost: FC<any> = (props) => {
                     className="cursor-pointer lg:w-[100%] w-[50%] pl-[10px] lg:pl-[0]"
                     onClick={() =>
                       router?.push(
-                        `/travel/${props?.data[2]?.slug}?category=${props?.data[2]?.category.id}`
+                        `/${router?.pathname?.replace("/", "")}/${
+                          props?.data[2]?.slug
+                        }`
                       )
                     }
                   >
@@ -244,9 +260,7 @@ const AllPost: FC<any> = (props) => {
                         className="cursor-pointer md:w-[50%] lg:w-[33.33%] px-[8px] py-[10px] w-[100%]"
                         key={val?.id}
                         onClick={() =>
-                          router?.push(
-                            `/travel/${val?.slug}?category=${val?.category.id}`
-                          )
+                          router?.push(`/${val?.category?.slug}/${val?.slug}`)
                         }
                       >
                         <div className="overflow-hidden  pb-[5px]">

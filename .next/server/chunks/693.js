@@ -41,9 +41,61 @@ function MetaSeo(props) {
     if (!keywords) {
         keywords = "vietnam tourism, vietnam travel, vietnam website";
     }
-    // if(!dataSchema) {
-    //   dataSchema?.
-    // }
+    if (!dataSchema) {
+        const data = {
+            mainEntityOfPage: "https://culturalvn.com",
+            idUrl: "https://culturalvn.com",
+            articleSection: "Travel",
+            datePublished: "",
+            dateModified: ""
+        };
+        dataSchema = data;
+    }
+    const schema = {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        mainEntityOfPage: `${dataSchema.mainEntityOfPage}/#WebPage`,
+        "@id": `${dataSchema.idUrl}/#NewsArticle`,
+        headline: title,
+        name: title,
+        description: description,
+        articleSection: dataSchema.articleSection,
+        inLanguage: "vi,en",
+        url: url,
+        image: {
+            "@context": "http://schema.org",
+            "@type": "ImageObject",
+            url: image,
+            caption: title,
+            width: "1200",
+            height: "630"
+        },
+        isPartOf: {
+            "@type": "CollectionPage",
+            "@id": dataSchema.idUrl,
+            name: dataSchema.articleSection,
+            abstract: title,
+            publisher: {
+                "@id": `${urlSeo}/#Organization`
+            }
+        },
+        author: {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "@id": `${urlSeo}#Person`,
+            name: "Cultural Viet Nam",
+            url: urlSeo,
+            worksFor: {
+                "@id": `${urlSeo}/#Organization`
+            }
+        },
+        datePublished: dataSchema?.datePublished,
+        dateModified: dataSchema?.dateModified,
+        publisher: {
+            "@id": `${urlSeo}/#Organization`
+        },
+        keywords: keywords?.split(",")
+    };
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
             children: [
@@ -105,6 +157,12 @@ function MetaSeo(props) {
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                     name: "twitter:image",
                     content: image
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                    type: "application/ld+json",
+                    dangerouslySetInnerHTML: {
+                        __html: JSON.stringify(schema)
+                    }
                 })
             ]
         })
