@@ -181,7 +181,7 @@ const AllPost = (props)=>{
                                                             }),
                                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                                 className: "post_title lg:!my-[10px] !my-[5px]",
-                                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
+                                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                                                                     className: "lg:!text-[26px] lg:!leading-[36px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[78px]  overflow-hidden",
                                                                     children: props?.data[0]?.title
                                                                 })

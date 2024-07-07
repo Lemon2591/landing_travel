@@ -11,7 +11,7 @@
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
       "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.35dc636c60f0df62.js"
+      "static/chunks/393.ce58799666bbde69.js"
     ]
   },
   "food/[sort_url].tsx -> @/components/PostCategory/Post": {
@@ -26,7 +26,7 @@
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
       "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.35dc636c60f0df62.js"
+      "static/chunks/393.ce58799666bbde69.js"
     ]
   },
   "index.tsx -> @/components/Home/Home": {
@@ -48,7 +48,7 @@
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
       "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.35dc636c60f0df62.js"
+      "static/chunks/393.ce58799666bbde69.js"
     ]
   }
 }

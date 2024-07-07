@@ -145,9 +145,9 @@ const AllPost: FC<any> = (props) => {
                   >
                     <div className="post_tag"></div>
                     <div className="post_title lg:!my-[10px] !my-[5px]">
-                      <h6 className="lg:!text-[26px] lg:!leading-[36px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[78px]  overflow-hidden">
+                      <h1 className="lg:!text-[26px] lg:!leading-[36px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[78px]  overflow-hidden">
                         {props?.data[0]?.title}
-                      </h6>
+                      </h1>
                     </div>
                     <div className="post_content_details">
                       <ul>
