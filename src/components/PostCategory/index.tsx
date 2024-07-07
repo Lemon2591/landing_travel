@@ -7,6 +7,7 @@ import fetchApi from "../../util/helper";
 import MetaSeo from "../MetaSeo";
 
 const AllPost: FC<any> = (props) => {
+  const router = useRouter();
   const dataSeo = {
     description:
       "Discover the highlights of Vietnam through the country's official tourism website. Plan your trip with advice on Vietnam's best destinations, what to do in Vietnam, visas for Vietnam, where to go in Vietnam, and much more.",
@@ -15,15 +16,17 @@ const AllPost: FC<any> = (props) => {
     domain: "https://culturalvn.com",
     keywords: "vietnam tourism, vietnam travel, vietnam website",
     dataSchema: {
-      mainEntityOfPage: props?.data?.post?.url,
-      idUrl: props?.data?.post?.url,
-      articleSection: props?.data?.post?.category?.category_name, // Thể loại
+      mainEntityOfPage: `https://culturalvn.com/${router?.pathname.replace(
+        "/",
+        ""
+      )}`,
+      idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
+      articleSection: router?.pathname.replace("/", ""), // Thể loại
     },
   };
 
   const [data, setData] = useState<any>({});
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const list_filter = [
     {

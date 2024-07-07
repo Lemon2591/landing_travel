@@ -224,6 +224,10 @@ function MetaSeo(props) {
                     name: "twitter:image",
                     content: image
                 }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                    rel: "canonical",
+                    href: url
+                }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                     type: "application/ld+json",
                     dangerouslySetInnerHTML: {

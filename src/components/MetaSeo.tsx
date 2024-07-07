@@ -47,7 +47,6 @@ export default function MetaSeo(props: any) {
     };
     dataSchema = data;
   }
-
   const schema_v1 = {
     "@context": "http://schema.org",
     "@type": "NewsArticle",
@@ -169,6 +168,7 @@ export default function MetaSeo(props: any) {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <link rel="canonical" href={url} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

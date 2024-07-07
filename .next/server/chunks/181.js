@@ -34,6 +34,7 @@ react_icons_ai__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.th
 
 
 const AllPost = (props)=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     const dataSeo = {
         description: "Discover the highlights of Vietnam through the country's official tourism website. Plan your trip with advice on Vietnam's best destinations, what to do in Vietnam, visas for Vietnam, where to go in Vietnam, and much more.",
         image: props?.data?.thumbnail,
@@ -41,14 +42,13 @@ const AllPost = (props)=>{
         domain: "https://culturalvn.com",
         keywords: "vietnam tourism, vietnam travel, vietnam website",
         dataSchema: {
-            mainEntityOfPage: props?.data?.post?.url,
-            idUrl: props?.data?.post?.url,
-            articleSection: props?.data?.post?.category?.category_name
+            mainEntityOfPage: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
+            idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
+            articleSection: router?.pathname.replace("/", "")
         }
     };
     const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({});
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     const list_filter = [
         {
             id: 1,

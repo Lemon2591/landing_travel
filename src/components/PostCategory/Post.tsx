@@ -17,11 +17,12 @@ const Post = (props: any) => {
     image: props?.data?.post?.thumbnail,
     title: props?.data?.post?.title,
     domain: props?.data?.post?.url,
+    url: props?.data?.post?.url,
     keywords: props?.data?.post?.key_seo,
     dataSchema: {
       mainEntityOfPage: props?.data?.post?.url,
-      idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
-      articleSection: router?.pathname.replace("/", ""), // Thể loại
+      idUrl: props?.data?.post?.url,
+      articleSection: props?.data?.post?.category?.category_name, // Thể loại
     },
   };
 

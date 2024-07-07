@@ -35,11 +35,12 @@ const Post = (props)=>{
         image: props?.data?.post?.thumbnail,
         title: props?.data?.post?.title,
         domain: props?.data?.post?.url,
+        url: props?.data?.post?.url,
         keywords: props?.data?.post?.key_seo,
         dataSchema: {
             mainEntityOfPage: props?.data?.post?.url,
-            idUrl: `https://culturalvn.com/${router?.pathname.replace("/", "")}`,
-            articleSection: router?.pathname.replace("/", "")
+            idUrl: props?.data?.post?.url,
+            articleSection: props?.data?.post?.category?.category_name
         }
     };
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
