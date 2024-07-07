@@ -65,7 +65,7 @@ const Post = (props)=>{
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: "post_title lg:my-[20px] my-[10px]",
-                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                                             className: "lg:!text-[32px] lg:!leading-[40px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[80px]  overflow-hidden",
                                             children: props?.data?.post?.title
                                         })

@@ -39,9 +39,9 @@ const Post = (props: any) => {
             <div className="post_content lg:pt-[280px] lg:px-[20px] pt-[120px] px-[20px] pb-[20px]">
               <div className="post_tag">{/* <span>Ha Giang</span> */}</div>
               <div className="post_title lg:my-[20px] my-[10px]">
-                <h6 className="lg:!text-[32px] lg:!leading-[40px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[80px]  overflow-hidden">
+                <h1 className="lg:!text-[32px] lg:!leading-[40px]  !text-[16px] !leading-[20px] max-h-[40px] lg:max-h-[80px]  overflow-hidden">
                   {props?.data?.post?.title}
-                </h6>
+                </h1>
               </div>
               <div className="post_content_details">
                 <ul>

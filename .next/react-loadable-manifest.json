@@ -3,7 +3,7 @@
     "id": 3668,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/668.7e05b7094ee0b311.js"
+      "static/chunks/668.c5119310568f9a70.js"
     ]
   },
   "culture/index.tsx -> @/components/PostCategory": {
@@ -18,7 +18,7 @@
     "id": 3668,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/668.7e05b7094ee0b311.js"
+      "static/chunks/668.c5119310568f9a70.js"
     ]
   },
   "food/index.tsx -> @/components/PostCategory": {
@@ -40,7 +40,7 @@
     "id": 3668,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/668.7e05b7094ee0b311.js"
+      "static/chunks/668.c5119310568f9a70.js"
     ]
   },
   "travel/index.tsx -> @/components/PostCategory": {

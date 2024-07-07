@@ -1,16 +1,16 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/404": "pages/404.html",
   "/": "pages/index.html",
-  "/_error": "pages/_error.js",
-  "/food/[sort_url]": "pages/food/[sort_url].js",
+  "/_document": "pages/_document.js",
+  "/sitemap.xml": "pages/sitemap.xml.js",
   "/food": "pages/food.js",
   "/culture": "pages/culture.js",
   "/travel": "pages/travel.js",
   "/culture/[sort_url]": "pages/culture/[sort_url].js",
+  "/food/[sort_url]": "pages/food/[sort_url].js",
+  "/_error": "pages/_error.js",
   "/travel/[sort_url]": "pages/travel/[sort_url].js",
   "/sitemaps/food.xml": "pages/sitemaps/food.xml.js",
-  "/sitemaps/travel.xml": "pages/sitemaps/travel.xml.js",
-  "/sitemap.xml": "pages/sitemap.xml.js"
+  "/sitemaps/travel.xml": "pages/sitemaps/travel.xml.js"
 }
