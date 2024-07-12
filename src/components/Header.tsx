@@ -55,7 +55,7 @@ const Header: FC = () => {
                 <img
                   src="/assets/img/static/logo.svg"
                   alt=""
-                  className="w-[190px]"
+                  className="w-[150px]"
                 />
               </a>
             </div>
@@ -111,7 +111,7 @@ const Header: FC = () => {
               <img
                 src="/assets/img/static/logo.svg"
                 alt=""
-                className="w-[190px]"
+                className="w-[150px]"
               />
             </a>
           </div>

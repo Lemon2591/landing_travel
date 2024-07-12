@@ -1,6 +1,5 @@
-import fs from "fs";
-
 const Sitemap = () => {};
+import { KEY } from "../util/keyInstance";
 
 export const getServerSideProps = async ({ res }) => {
   const baseUrl = {
@@ -8,20 +7,34 @@ export const getServerSideProps = async ({ res }) => {
     production: "https://culturalvn.com",
   }[process.env.NODE_ENV];
 
-  fs.readdir(__dirname, function (err, files) {
-    // handling error
-    if (err) {
-      return err;
+  const res_data = await fetch(
+    `${process.env.API_SERVER_URL}/api/get-all-post`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        key: KEY,
+        location: "all",
+      },
     }
-    // listing all files using forEach
-    files.forEach(function (file) {
-      // Do whatever you want to do with the file
-    });
-  });
+  );
+  const obj = await res_data.json();
 
-  let staticPages = ["travel", "food", "culture"].map((staticPagePath) => {
-    return `${baseUrl}/${staticPagePath}`;
+  if (!obj || obj.statusCode !== 200) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let pages = obj.data.data.map((item) => {
+    return item?.url;
   });
+  let staticHome = ["travel", "food", "culture", "search"].map(
+    (staticPagePath) => {
+      return `${baseUrl}/${staticPagePath}`;
+    }
+  );
+
+  let staticPages = [...staticHome, ...pages];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${staticPages

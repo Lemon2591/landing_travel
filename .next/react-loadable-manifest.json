@@ -10,8 +10,9 @@
     "id": 7393,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.ce58799666bbde69.js"
+      "static/chunks/575.d33e755d2d97dd4b.js",
+      "static/chunks/466.ceecc6f8ab05df89.js",
+      "static/chunks/393.bc1b46e2f19045c2.js"
     ]
   },
   "food/[sort_url].tsx -> @/components/PostCategory/Post": {
@@ -25,8 +26,9 @@
     "id": 7393,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.ce58799666bbde69.js"
+      "static/chunks/575.d33e755d2d97dd4b.js",
+      "static/chunks/466.ceecc6f8ab05df89.js",
+      "static/chunks/393.bc1b46e2f19045c2.js"
     ]
   },
   "index.tsx -> @/components/Home/Home": {
@@ -34,6 +36,14 @@
     "files": [
       "static/css/2aa199ae6265e4c0.css",
       "static/chunks/15.cf7e18590ca2cf77.js"
+    ]
+  },
+  "search/index.tsx -> @/components/Search": {
+    "id": 9708,
+    "files": [
+      "static/chunks/75fc9c18.46cf986a0e992dd0.js",
+      "static/chunks/575.d33e755d2d97dd4b.js",
+      "static/chunks/708.9f37956655cf11a3.js"
     ]
   },
   "travel/[sort_url].tsx -> @/components/PostCategory/Post": {
@@ -47,8 +57,9 @@
     "id": 7393,
     "files": [
       "static/chunks/75fc9c18.46cf986a0e992dd0.js",
-      "static/chunks/41.7322cee8f31c9c15.js",
-      "static/chunks/393.ce58799666bbde69.js"
+      "static/chunks/575.d33e755d2d97dd4b.js",
+      "static/chunks/466.ceecc6f8ab05df89.js",
+      "static/chunks/393.bc1b46e2f19045c2.js"
     ]
   }
 }

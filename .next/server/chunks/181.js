@@ -47,6 +47,7 @@ const AllPost = (props)=>{
             articleSection: router?.pathname.replace("/", "")
         }
     };
+    const [search, setSearch] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({});
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const list_filter = [
@@ -58,27 +59,27 @@ const AllPost = (props)=>{
         {
             id: 1,
             name: "Ha Giang",
-            value: "ha-giang"
+            value: "ha giang"
         },
         {
             id: 2,
             name: "Ha Noi",
-            value: "ha-noi"
+            value: "ha noi"
         },
         {
             id: 3,
             name: "TP. Ho Chi Minh",
-            value: "ho-chi-minh"
+            value: "ho chi minh"
         },
         {
             id: 4,
             name: "Da Nang",
-            value: "da-nang"
+            value: "da nang"
         },
         {
             id: 5,
             name: "Ha Long",
-            value: "ha-long"
+            value: "ha long"
         }
     ];
     const getData = async (page = 1, limit = 9)=>{
@@ -97,6 +98,12 @@ const AllPost = (props)=>{
             await getData();
         })();
     }, []);
+    const onSearch = ()=>{
+        if (!search) {
+            return router.push("/search");
+        }
+        router.push(`/search?location=${search}`);
+    };
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MetaSeo__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
@@ -125,7 +132,7 @@ const AllPost = (props)=>{
                                                 children: list_filter?.map((val, idx)=>{
                                                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                                         className: "my-[5px] lg:my-[0]",
-                                                        onClick: ()=>router?.push(`/${router?.pathname?.replace("/", "")}?location=${val?.value}`),
+                                                        onClick: ()=>router?.push(`/search?location=${val?.value}`),
                                                         children: val?.name
                                                     }, idx);
                                                 })
@@ -141,10 +148,17 @@ const AllPost = (props)=>{
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
                                                 type: "text",
-                                                placeholder: "Looking for location..."
+                                                placeholder: "Looking for location...",
+                                                onChange: (e)=>setSearch(e.target.value),
+                                                onKeyDown: (e)=>{
+                                                    if (e.key === "Enter") {
+                                                        onSearch();
+                                                    }
+                                                }
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                                 className: "btn_search",
+                                                onClick: onSearch,
                                                 children: "Search"
                                             })
                                         ]
@@ -341,7 +355,8 @@ const AllPost = (props)=>{
                                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                                                     src: val?.thumbnail,
                                                                     alt: val?.slug,
-                                                                    className: "rounded-[8px] lg:h-[180px] object-cover w-[100%] md:h-[350px] h-[220px]"
+                                                                    className: "rounded-[8px] lg:h-[180px] object-cover w-[100%] md:h-[350px] h-[220px]",
+                                                                    loading: "lazy"
                                                                 })
                                                             }),
                                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {

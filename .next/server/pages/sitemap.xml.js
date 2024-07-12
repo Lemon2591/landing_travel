@@ -5,46 +5,50 @@ exports.id = 164;
 exports.ids = [164];
 exports.modules = {
 
-/***/ 9935:
+/***/ 6405:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ sitemap_xml),
-  "getServerSideProps": () => (/* binding */ getServerSideProps)
-});
-
-;// CONCATENATED MODULE: external "fs"
-const external_fs_namespaceObject = require("fs");
-var external_fs_default = /*#__PURE__*/__webpack_require__.n(external_fs_namespaceObject);
-;// CONCATENATED MODULE: ./src/pages/sitemap.xml.js
-
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */ });
+/* harmony import */ var _util_keyInstance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8073);
 const Sitemap = ()=>{};
+
 const getServerSideProps = async ({ res  })=>{
     const baseUrl = {
         development: "https://culturalvn.com",
         production: "https://culturalvn.com"
     }["production"];
-    external_fs_default().readdir(__dirname, function(err, files) {
-        // handling error
-        if (err) {
-            return err;
+    const res_data = await fetch(`${process.env.API_SERVER_URL}/api/get-all-post`, {
+        headers: {
+            "Content-Type": "application/json",
+            key: _util_keyInstance__WEBPACK_IMPORTED_MODULE_0__/* .KEY */ .F,
+            location: "all"
         }
-        // listing all files using forEach
-        files.forEach(function(file) {
-        // Do whatever you want to do with the file
-        });
     });
-    let staticPages = [
+    const obj = await res_data.json();
+    if (!obj || obj.statusCode !== 200) {
+        return {
+            notFound: true
+        };
+    }
+    let pages = obj.data.data.map((item)=>{
+        return item?.url;
+    });
+    let staticHome = [
         "travel",
         "food",
-        "culture"
+        "culture",
+        "search"
     ].map((staticPagePath)=>{
         return `${baseUrl}/${staticPagePath}`;
     });
+    let staticPages = [
+        ...staticHome,
+        ...pages
+    ];
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${staticPages.map((url)=>{
@@ -66,7 +70,18 @@ const getServerSideProps = async ({ res  })=>{
         props: {}
     };
 };
-/* harmony default export */ const sitemap_xml = (Sitemap);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sitemap);
+
+
+/***/ }),
+
+/***/ 8073:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "F": () => (/* binding */ KEY)
+/* harmony export */ });
+const KEY = "3J9EBJFE3";
 
 
 /***/ })
@@ -78,7 +93,7 @@ const getServerSideProps = async ({ res  })=>{
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(9935));
+var __webpack_exports__ = (__webpack_exec__(6405));
 module.exports = __webpack_exports__;
 
 })();

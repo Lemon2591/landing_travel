@@ -108,7 +108,7 @@ const Header = ()=>{
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                         src: "/assets/img/static/logo.svg",
                                         alt: "",
-                                        className: "w-[190px]"
+                                        className: "w-[150px]"
                                     })
                                 })
                             }),
@@ -168,7 +168,7 @@ const Header = ()=>{
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                         src: "/assets/img/static/logo.svg",
                                         alt: "",
-                                        className: "w-[190px]"
+                                        className: "w-[150px]"
                                     })
                                 })
                             }),

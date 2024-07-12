@@ -24,7 +24,7 @@ const AllPost: FC<any> = (props) => {
       articleSection: router?.pathname.replace("/", ""), // Thể loại
     },
   };
-
+  const [search, setSearch] = useState("");
   const [data, setData] = useState<any>({});
   const [loading, setLoading] = useState(false);
 
@@ -37,27 +37,27 @@ const AllPost: FC<any> = (props) => {
     {
       id: 1,
       name: "Ha Giang",
-      value: "ha-giang",
+      value: "ha giang",
     },
     {
       id: 2,
       name: "Ha Noi",
-      value: "ha-noi",
+      value: "ha noi",
     },
     {
       id: 3,
       name: "TP. Ho Chi Minh",
-      value: "ho-chi-minh",
+      value: "ho chi minh",
     },
     {
       id: 4,
       name: "Da Nang",
-      value: "da-nang",
+      value: "da nang",
     },
     {
       id: 5,
       name: "Ha Long",
-      value: "ha-long",
+      value: "ha long",
     },
   ];
 
@@ -81,6 +81,13 @@ const AllPost: FC<any> = (props) => {
     })();
   }, []);
 
+  const onSearch = () => {
+    if (!search) {
+      return router.push("/search");
+    }
+    router.push(`/search?location=${search}`);
+  };
+
   return (
     <>
       <MetaSeo {...dataSeo} />
@@ -97,11 +104,7 @@ const AllPost: FC<any> = (props) => {
                       className="my-[5px] lg:my-[0]"
                       key={idx}
                       onClick={() =>
-                        router?.push(
-                          `/${router?.pathname?.replace("/", "")}?location=${
-                            val?.value
-                          }`
-                        )
+                        router?.push(`/search?location=${val?.value}`)
                       }
                     >
                       {val?.name}
@@ -114,8 +117,19 @@ const AllPost: FC<any> = (props) => {
               <i className="mr-2">
                 <AiOutlineSearch />
               </i>
-              <input type="text" placeholder="Looking for location..." />
-              <button className="btn_search">Search</button>
+              <input
+                type="text"
+                placeholder="Looking for location..."
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    onSearch();
+                  }
+                }}
+              />
+              <button className="btn_search" onClick={onSearch}>
+                Search
+              </button>
             </div>
           </div>
           <div className=" max-w-[1250px] m-auto  ">
@@ -271,6 +285,7 @@ const AllPost: FC<any> = (props) => {
                             src={val?.thumbnail}
                             alt={val?.slug}
                             className="rounded-[8px] lg:h-[180px] object-cover w-[100%] md:h-[350px] h-[220px]"
+                            loading="lazy"
                           />
                         </div>
                         <div className="css_text_all_post my-[5px]">
