@@ -52,8 +52,8 @@ async function getServerSideProps(context) {
             headers: {
                 "Content-Type": "application/json",
                 key: _util_keyInstance__WEBPACK_IMPORTED_MODULE_3__/* .KEY */ .F,
-                location: context?.query?.location || "all",
-                category: context?.resolvedUrl?.replace("/", "")
+                location: "all",
+                category: "culture"
             }
         });
         const obj = await res.json();

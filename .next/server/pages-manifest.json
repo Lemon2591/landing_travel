@@ -4,13 +4,13 @@
   "/404": "pages/404.html",
   "/": "pages/index.html",
   "/_error": "pages/_error.js",
+  "/culture": "pages/culture.js",
+  "/food": "pages/food.js",
   "/food/[sort_url]": "pages/food/[sort_url].js",
   "/travel/[sort_url]": "pages/travel/[sort_url].js",
-  "/food": "pages/food.js",
-  "/search": "pages/search.js",
-  "/culture": "pages/culture.js",
-  "/travel": "pages/travel.js",
   "/culture/[sort_url]": "pages/culture/[sort_url].js",
+  "/travel": "pages/travel.js",
+  "/search": "pages/search.js",
   "/sitemap.xml": "pages/sitemap.xml.js",
   "/sitemaps/sitemap.xml": "pages/sitemaps/sitemap.xml.js"
 }

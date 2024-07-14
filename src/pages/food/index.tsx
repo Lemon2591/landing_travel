@@ -32,8 +32,8 @@ export async function getServerSideProps(context: any) {
         headers: {
           "Content-Type": "application/json",
           key: KEY,
-          location: context?.query?.location || "all",
-          category: context?.resolvedUrl?.replace("/", ""),
+          location: "all",
+          category: "food",
         },
       }
     );
