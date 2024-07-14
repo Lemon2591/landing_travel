@@ -49,7 +49,7 @@ async function getServerSideProps(context) {
         };
     }
     try {
-        const categoryID = context?.resolvedUrl?.split("/")[1] === "food" ? "1" : context?.resolvedUrl?.split("/")[1] === "travel" ? "2" : "";
+        const categoryID = context?.resolvedUrl?.split("/")[1] === "food" ? "1" : context?.resolvedUrl?.split("/")[1] === "travel" ? "2" : context?.resolvedUrl?.split("/")[1] === "culture" ? "3" : "";
         const res = await fetch(`${process.env.API_SERVER_URL}/api/get-post`, {
             headers: {
                 "Content-Type": "application/json",

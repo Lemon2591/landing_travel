@@ -32,8 +32,9 @@ export async function getServerSideProps(context: any) {
         ? "1"
         : context?.resolvedUrl?.split("/")[1] === "travel"
         ? "2"
+        : context?.resolvedUrl?.split("/")[1] === "culture"
+        ? "3"
         : "";
-
     const res = await fetch(`${process.env.API_SERVER_URL}/api/get-post`, {
       headers: {
         "Content-Type": "application/json",
